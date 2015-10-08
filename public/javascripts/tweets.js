@@ -14,6 +14,7 @@ $(document).on('submit', '.tweet-form', function(evt) {
         author: currentUser
       }
   ).done(function(response) {
+    $('textarea.message').val('');
     $('.your-tweets').prepend(
       '<div class="your-tweet" data-id='+ id +'>' +
       '  <div class="your-text" >' + text + '</div>' + 
