@@ -13,10 +13,12 @@
 
 <div class="tweets">
 	<div class="yours section">Your tweets</div>
-	{{#each userTweets}}
-		<div class="your-tweet" data-id={{id}}>
-			<div class="your-text" > {{text}}</div> 
-			<button class="delete"> Delete </button>
-		</div>
-	{{/each}}
+	<div class="your-tweets">
+		{{#each userTweets}}
+			<div class="your-tweet" data-id={{id}}>
+				<div class="your-text" > {{text}}</div> 
+				<button class="delete"> Delete </button>
+			</div>
+		{{/each}}
+	</div>
 </div>

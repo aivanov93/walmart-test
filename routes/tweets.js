@@ -14,7 +14,7 @@ var mustBeLoggedIn = function(req, res, next) {
   var user = User.get(req.session.username)
   if (!user){
     res.render('error', {
-      message: "You must be logged in."
+      message: "You must be logged in.";
     });
   } else {
     next()
@@ -61,8 +61,8 @@ router.get('/all', function(req, res, next) {
 *   - err: on error, an error message
 */
 router.post('/create', function(req, res, next) {
-  User.addTweet(req.session.username, req.body.text, req.body.createdAt)
-  utils.sendSuccess(res)
+  User.addTweet(req.session.username, req.body.text, req.body.createdAt);
+  utils.sendSuccess(res);
 });
 
 router.delete('/:tweet_id', function(req, res) {

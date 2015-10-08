@@ -16,7 +16,7 @@ router.get('/login', function(req, res, next) {
     - err: on error, an error message
 */
 router.post('/login', function(req, res, next) {
-  var user = User.get(req.session.username)
+  var user = User.get(req.session.username);
   if (user){
     utils.sendError(res, 403, 'A user is already logged in.');
   } else {
@@ -24,7 +24,7 @@ router.post('/login', function(req, res, next) {
     if (username){
       User.createOrLogin(username);
       req.session.username = username;
-      utils.sendSuccess(res, {user: username})
+      utils.sendSuccess(res, {user: username});
     } else {
       utils.sendError(res, 403, 'Username is empty');
     }
@@ -39,7 +39,7 @@ router.post('/login', function(req, res, next) {
     - err: on error, an error message
 */
 router.post('/logout', function(req, res) {
-  var user = User.get(req.session.username)
+  var user = User.get(req.session.username);
   if (user){
     req.session.destroy();
     utils.sendSuccess(res);
