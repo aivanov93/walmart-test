@@ -12,7 +12,7 @@ $(document).on('submit', '.tweet-form', function(evt) {
         text: text,
         createdAt: createdAt,
         author: currentUser
-      };
+      }
   ).done(function(response) {
     $('.your-tweets').prepend(
       '<div class="your-tweet" data-id='+ id +'>' +
