@@ -1,0 +1,101 @@
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+  	Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: lighter;
+  padding: 50px;
+}
+
+.title{
+	font-size: 20px;
+	font-weight: bold;
+	color: #517294;
+	border-bottom: 1px solid #BAC2C4;
+	width: 100px;
+	margin-bottom: 20px;
+}
+
+
+.err{
+	font-size: 16px;
+	font-weight: bold;
+	color: red;
+	margin-bottom: 10px;
+}
+
+.your-tweet{
+	margin-bottom: 3px;
+}
+
+button {
+	background-color:#7892c2;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size: 15px;
+	padding:9px 23px;
+	text-decoration: none;
+	border: none;
+}
+
+button:hover {
+	background-color:#476e9e;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+button:disabled {
+	background-color: grey;
+	cursor: default;
+        pointer-events: none;
+}
+
+.username {
+	margin-bottom: 10px;
+}
+
+.logout, .user, .delete, .your-text {
+	display: inline-block;
+}
+.your-text{
+	margin-right: 20px;
+}
+
+.delete {
+	padding: 6px;
+	background-color: #CF6B6C;
+}
+
+
+.user {
+	display: inline-block;
+}
+
+.section {
+	color: #838E9E;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.navb {
+	background-color: #4A484B;
+	padding: 5px 15px; 
+	font-size: 13px;
+}
+
+.nav {
+	margin-bottom: 20px;
+}
+
+.msg {
+	margin: 5px;
+}
+
+.author {
+	color: #B9B4BB;
+}
+
+a {
+  color: #00B7FF;
+}
