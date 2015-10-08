@@ -1,0 +1,11 @@
+<div class='nav'>
+	<button class="navb your-page" {{#if yours}} disabled {{/if}}> Your Page  </button>
+	<button class="navb all-page" {{#unless yours}} disabled {{/unless}}> All tweets </button>
+</div>
+
+<div>
+	<div class="user"> Hi, {{user}} </div>
+	<button class="logout">Logout</button>
+</div>
+
+<div class="error"></div>
