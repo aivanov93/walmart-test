@@ -5,7 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var mongoose = require('mongoose');
 
+var User = require('./models/User')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -35,6 +37,28 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({ secret : '6170', resave : true, saveUninitialized : true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/fritter');
+
+
+// Is called on every request and populates
+// the req.currentUser with a user with 
+// the username provided in the session variable 
+app.use(function(req, res, next) {
+  if (req.session.username) {
+    User.find({username: req.session.username}, 
+      function(err, users) {
+        if (users.length > 0) {
+          req.currentUser = users[0];
+        } else {
+          req.session.destroy();
+        }
+        next();
+      });
+  } else {
+    next();
+  }
+});
 
 app.use('/', routes);
 app.use('/users', users);

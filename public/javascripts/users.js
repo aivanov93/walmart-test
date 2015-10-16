@@ -1,18 +1,31 @@
 /**
 * When the user clicks on the Login button
 */
-$(document).on('submit', '.login-form', function(evt) {
+$(document).on('click', '.index-btn', function(evt) {
       evt.preventDefault();
+      var url;
+      var form = {};
+      // grab the data from the form
+      $.each($('.login-form').serializeArray(), function(i, field) {
+          form[field.name] = field.value;
+      });
+
+      // find the correct url
+      if ($(this).hasClass('login')) url = '/users/login';
+      else url = '/users/signup';
+
+      // send the post request
       $.post(
-          '/users/login',
-          {username: this.username.value}
+          url,
+          {username: form.username,
+          password: form.password}
       ).done(function(response) {
-          window.location = '/tweets/';
-          window.reload();
-          currentUser = response.content.username;
+          // redirect to the home page
+          window.location = '/';
       }).fail(function(responseObject) {
           var response = $.parseJSON(responseObject.responseText);
-          $('.error').text(response.err);
+          $('.alert').text(response.error);
+          $('.alert').removeClass('hidden');
       });
   });
 
@@ -25,10 +38,11 @@ $(document).on('click', '.logout', function(evt) {
       $.post(
           '/users/logout'
       ).done(function(response) {
-          window.location = '/';
-          window.reload();
+          // redirect to the login page
+          window.location = '/users/';
       }).fail(function(responseObject) {
           var response = $.parseJSON(responseObject.responseText);
-          $('.error').text(response.err);
+          $('.alert').text(response.error);
+          $('.alert').removeClass('hidden');
       });
   });

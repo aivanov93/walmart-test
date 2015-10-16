@@ -25,6 +25,16 @@ var utils = (function () {
     }).end();
   };
 
+  _utils.sendUnknownError = function(res) {
+    _utils.sendError(res, 500, 'Unknown error has occured.');
+  }
+
+  _utils.renderUnknownError = function(res){
+    res.render('error', {
+      message: "Unknown error has ocurred."
+    });
+  }
+
   Object.freeze(_utils);
   return _utils;
 })();

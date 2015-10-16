@@ -6,9 +6,9 @@
 {{> head}}
 
 <div class="tweets">
-	<div class="all section">All tweets</div>
-	{{#each tweets}}
-		<div class="all-tweet" data-id={{id}}> <span class="author"> {{author}}</span>: {{text}}</div>
+	<h3> {{title}}</h3>
+	{{#each userTweets}}
+		{{>tweet tweet=this yours=false}}
 	{{/each}}
 </div>
 

@@ -1,1 +1,29 @@
-<button class="login-btn">Login</button>
+{{#section 'head'}}
+    <script src="/javascripts/users.js"></script>
+{{/section}}
+
+
+<form class="login-form">
+
+	<div class="input-group margin-bot">
+	  <span class="input-group-addon" id="basic-addon1">Username</span>
+	  <input type="text" class="form-control" name="username" aria-describedby="basic-addon1" required>
+	</div>
+
+	<div class="input-group">
+	  <span class="input-group-addon" id="basic-addon1">Password</span>
+	  <input type="text" class="form-control" name="password"  aria-describedby="basic-addon1" required>
+	</div>
+
+	
+	
+</form>
+
+
+
+<div class="btn-group margin-top" role="group" aria-label="...">
+  <button type="button" class="btn btn-default index-btn login">Login</button>
+  <button type="button" class="btn btn-default index-btn signup">Sign-up</button>
+</div>
+
+<div class="alert alert-danger hidden margin-top" role="alert" ></div>

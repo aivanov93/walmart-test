@@ -1,11 +1,23 @@
-<div class='nav'>
-	<button class="navb your-page" {{#if yours}} disabled {{/if}}> Your Page  </button>
-	<button class="navb all-page" {{#unless yours}} disabled {{/unless}}> All tweets </button>
+<div class="margin-bot">
+
+<h4>Hi, <span class="label label-default">{{user}}</span> 
+	<button class="logout btn btn-default">Logout</button>
+</h4>
+	
 </div>
 
-<div>
-	<div class="user"> Hi, {{user}} </div>
-	<button class="logout">Logout</button>
+
+<div class="btn-group btn-group-justified" role="group">
+  <div class="btn-group homepage" role="group">
+    <button type="button" class="btn btn-primary"> Your Page</button>
+  </div>
+  <div class="btn-group followees" role="group">
+    <button type="button" class="btn btn-primary"> People you follow </button>
+  </div>
+  <div class="btn-group all" role="group">
+    <button type="button" class="btn btn-primary"> All users</button>
+  </div>
 </div>
 
-<div class="error"></div>
+
+
