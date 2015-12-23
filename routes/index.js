@@ -11,11 +11,8 @@ router.get('/', function(req, res, next) {
     res.render('index')
   });
 });
-/** 
-* Gets the homepage
-*
-* GET / 
-* Request: empty. */
+
+
 router.get('/product/:id', function(req, res, next) {
   var id = req.params.id;
   walmart.getItem(id).then(function(item) {
