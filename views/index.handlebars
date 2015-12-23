@@ -1,29 +1,26 @@
-{{#section 'head'}}
-    <script src="/javascripts/users.js"></script>
-{{/section}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/lib/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/semantic.min.css"> 
+</head>
+<body>
 
+<div class="ui container">
 
-<form class="login-form">
-
-	<div class="input-group margin-bot">
-	  <span class="input-group-addon" id="basic-addon1">Username</span>
-	  <input type="text" class="form-control" name="username" aria-describedby="basic-addon1" required>
-	</div>
-
-	<div class="input-group">
-	  <span class="input-group-addon" id="basic-addon1">Password</span>
-	  <input type="text" class="form-control" name="password"  aria-describedby="basic-addon1" required>
-	</div>
+	<h4 style="margin-top: 30px" > Choose product </h4>
 
 	
+	  <div class="ui input">
+	    <input type="text" id="id" placeholder="Product ID...">
+	  </div> 
+
+	  <button class="ui button submit-id" type="submit">Submit</button>
 	
-</form>
-
-
-
-<div class="btn-group margin-top" role="group" aria-label="...">
-  <button type="button" class="btn btn-default index-btn login">Login</button>
-  <button type="button" class="btn btn-default index-btn signup">Sign-up</button>
 </div>
 
-<div class="alert alert-danger hidden margin-top" role="alert" ></div>
+</body>
+</html>

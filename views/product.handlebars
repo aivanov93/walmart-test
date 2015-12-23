@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script src="/javascripts/lib/semantic.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/semantic.min.css"> 
+</head>
+<body>
+
+<div class="ui container">
+
+	<h2 style="margin-top: 30px" > Product </h2>
+
+	<div class = "product">
+		<div class="ui items">
+			<div class="item">
+			    <div class="image">
+			      <img width="400" src="{{product.primaryImageUrl}}">
+			    </div>
+			    <div class="content">
+			      <a class="header">{{product.productName}}</a>
+			      <div class="meta">
+			        <span>{{product.manufacturerName}}</span>
+			      </div>
+			      <div class="description">
+			        {{product.mediumDescription}}
+			      </div>
+			      <div class="extra">
+			        
+			      </div>
+			    </div>
+			  </div>
+		</div>
+	</div> 
+	<div class="reviews" style="margin-top: 30px">
+		
+		<h2> Reviews </h2>
+		<div class="ui divided items">
+		  {{#each product.reviewData.customerReviews}}
+			  <div class="item">
+			    <div class="content">
+			      <a class="header">{{reviewTitle}}</a>
+			      <div class="meta">
+			        <div class="ui star rating" data-rating="{{rating}} data-max-rating="5""></div> 
+			      </div>
+			      <div class="description">
+			        {{reviewText}}
+			      </div>
+			    </div>
+			  </div>
+		  {{/each}}
+		</div>
+		
+	</div>
+</div>
+
+</body>
+</html>
