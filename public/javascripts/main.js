@@ -3,7 +3,16 @@ $( document ).ready(function() {
 
 	$('.submit-id').click(function(){
 		var id = $('#id').val()
-		console.log('IND ID', id)
-		window.location = 'product/' + id
+		var text = $('#text').val()
+		window.location = 'product/' + id + '?text='+text
 	})
+
+	$('.message .close')
+	  .on('click', function() {
+	    $(this)
+	      .closest('.message')
+	      .transition('fade')
+	    ;
+	  })
+	;
 });

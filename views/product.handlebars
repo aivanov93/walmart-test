@@ -11,7 +11,8 @@
 
 <div class="ui container">
 
-	<h2 style="margin-top: 30px" > Product </h2>
+	<a href='/'><button class="ui button" style="margin-top: 30px" >Select another product </button></a>
+	<h2 style="margin-top: 30px" > Product </h2> 
 
 	<div class = "product">
 		<div class="ui items">
@@ -38,7 +39,7 @@
 		
 		<h2> Reviews </h2>
 		<div class="ui divided items">
-		  {{#each product.reviewData.customerReviews}}
+		  {{#each reviews}}
 			  <div class="item">
 			    <div class="content">
 			      <a class="header">{{reviewTitle}}</a>

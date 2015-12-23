@@ -11,14 +11,32 @@
 
 <div class="ui container">
 
-	<h4 style="margin-top: 30px" > Choose product </h4>
+	<h4 style="margin-top: 30px" > Search </h4>
 
-	
-	  <div class="ui input">
+
+
+	<div class="ui form">
+	  <div class="field">
+	    <label>Product ID</label>
 	    <input type="text" id="id" placeholder="Product ID...">
-	  </div> 
-
+	 </div>
+	  <div class="field">
+	    <label>Some text</label>
+	    <textarea rows="2" id="text"></textarea>
+	  </div>
 	  <button class="ui button submit-id" type="submit">Submit</button>
+	</div>
+
+	 {{#if error}}
+	 	<div class="ui negative message">
+		  <i class="close icon"></i>
+		  <div class="header">
+		    This product doesn't exist
+		  </div>
+		  <p>Try another ID
+		</p>
+		</div>
+	 {{/if}}
 	
 </div>
 
